@@ -41,7 +41,8 @@ export class ProjectService {
             return {
                 id : project._id,
                 title:project.title,
-                description:project.description
+                description:project.description,
+                users:project.users
             }
         });
     }
