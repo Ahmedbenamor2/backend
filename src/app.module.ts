@@ -13,9 +13,7 @@ import { ProjectModule } from './project/project.module';
       envFilePath: '.env',
       isGlobal: true,
     }),
-    MongooseModule.forRoot(
-      'mongodb+srv://benamorahmed:HNXFfusL3iAqevsB@cluster0.49qqhhq.mongodb.net/?retryWrites=true&w=majority',
-    ),
+    MongooseModule.forRoot(process.env.DB_URI),
     AuthModule,
     TaskModule,
     ProjectModule,
