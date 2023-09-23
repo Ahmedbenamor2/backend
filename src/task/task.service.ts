@@ -42,6 +42,7 @@ export class TaskService {
 
   async findTask(projectId: string, taskId: string) {
     const task = await this.taskModel.findOne({ _id: taskId, projectId: projectId });
+    if (!task )throw new NotFoundException("Task Not found");
     return {
       id: task._id,
       title: task.title,
